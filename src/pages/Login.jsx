@@ -17,7 +17,7 @@ export const Login = () => {
 
             localStorage.setItem('token', response.data)
         } catch(error) {
-            alert('Credenciales de inicio de sesión incorrectas')
+            alert(error.response.data.message ?? 'Ocurrio un error al realizar el inicio de sesión')
         }
     }
 
@@ -37,7 +37,7 @@ export const Login = () => {
                         type="email"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
-                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="usuario@correo.com"
                     />
                 </div>
@@ -51,7 +51,7 @@ export const Login = () => {
                         type="password"
                         value={password}
                         onChange={e => setPassword(e.target.value)}
-                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="********"
                     />
                 </div>
