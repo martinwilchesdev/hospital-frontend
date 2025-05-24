@@ -1,5 +1,8 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+
+// paginas
 import { Login } from './pages/Login'
+import { Register } from './pages/Register'
 
 // componente principal de la aplicacion
 function App() {
@@ -10,6 +13,7 @@ function App() {
       <Routes>
         {/* ruta para el login */}
         <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
       </Routes>
     </Router>
   )
