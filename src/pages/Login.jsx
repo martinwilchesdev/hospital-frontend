@@ -15,14 +15,15 @@ export const Login = () => {
                 password
             })
 
+            // se almacena el token de autenticacion obtenido desde el backend en el localStorage
             localStorage.setItem('token', response.data)
         } catch(error) {
-            alert(error.response.data.message ?? 'Ocurrio un error al realizar el inicio de sesión')
+            alert(error?.response?.data?.message ?? 'Ocurrio un error al realizar el inicio de sesión')
         }
     }
 
     return(
-        <div className="flex items-center justify-center min-h-screen bg-gray-100">
+        <form onSubmit={handleLogin} className="flex items-center justify-center min-h-screen bg-gray-100">
             {/* contenedor del formulario de inicio de sesion */}
             <div className="bg-white p-8 rounded-2xl shadow-md w-full max-w-md">
                 {/* titulo */}
@@ -39,6 +40,7 @@ export const Login = () => {
                         onChange={e => setEmail(e.target.value)}
                         className="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="usuario@correo.com"
+                        required
                     />
                 </div>
 
@@ -53,17 +55,18 @@ export const Login = () => {
                         onChange={e => setPassword(e.target.value)}
                         className="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="********"
+                        required
                     />
                 </div>
 
                 {/* botón de login */}
                 <button
-                    onClick={handleLogin}
+                    type="submit"
                     className="w-full bg-blue-600 text-white py-2 rounded-lg transition duration-300 cursor-pointer hover:bg-blue-700"
                 >
                     Iniciar sesión
                 </button>
             </div>
-        </div>
+        </form>
     )
 }
