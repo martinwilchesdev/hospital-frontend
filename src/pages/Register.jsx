@@ -10,7 +10,7 @@ export const Register = () => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
 
-    const navigate = useNavigate()
+    const navigate = useNavigate() // cambio de la ruta actual
 
     // funcion a ejecutar cuando se haga clic en el boton registrarse
     const handleRegister = async () => {

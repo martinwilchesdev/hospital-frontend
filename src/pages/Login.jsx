@@ -8,7 +8,7 @@ export const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const navigate = useNavigate()
+    const navigate = useNavigate() // cambio de la ruta actual
 
     // funcion a ejecutar cuando se haga clic en el boton de iniciar sesion
     const handleLogin = async () => {
